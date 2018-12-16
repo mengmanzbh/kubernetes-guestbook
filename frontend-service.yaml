@@ -6,14 +6,13 @@ metadata:
     app: guestbook
     tier: frontend
 spec:
-   type: LoadBalancer
-  #   LoadBalancer: automatically create an "external" load-balanced IP for the frontend service.
-  #type: NodePort
-  #   NodePort allows to expose the service in a internal port that are shared across the entire cluster.
+  # comment or delete the following line if you want to use a LoadBalancer
+  #type: NodePort 
+  # if your cluster supports it, uncomment the following to automatically create
+  # an external load-balanced IP for the frontend service.
+  type: LoadBalancer
   ports:
-  # the port that this service should serve on
-  - port: 8089
-  #  nodePort: 30080
+  - port: 8088
   selector:
     app: guestbook
     tier: frontend
